@@ -1,4 +1,5 @@
 # MagicBotUz 
+![MagicBot](https://ibb.co/Gd8df8T)
 ### __MagicBotUz is Telegram userbot__
 Userbot consist base animations with smiles and letters.
 
