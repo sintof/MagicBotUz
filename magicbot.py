@@ -46,3 +46,9 @@ async def my_event_handler(event):
     elif ".anim" == event.raw_text[:5] and len(event.raw_text) > 6:
         orig_text = event.raw_text.split(".type ", maxsplit=1)[1]
         await event.edit(Alphabit.get_word)
+
+
+
+
+client.start()
+client.run_until_disconnected()
