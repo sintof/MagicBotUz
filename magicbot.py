@@ -11,6 +11,8 @@ api_hash = ip_hash
 
 client = TelegramClient('anon', api_id, api_hash)
 
+smiles = animations.Smiles()
+
 
 @client.on(events.NewMessage)
 async def my_event_handler(event):
@@ -18,7 +20,7 @@ async def my_event_handler(event):
         time.sleep(0.5)
         for i in range(5):
             time.sleep(0.5)
-            for j in animations.smiles.d:
+            for j in smiles.d:
                 time.sleep(0.5)
                 await event.edit(j)
     elif ".type" == event.raw_text[:5] and len(event.raw_text) > 6:
