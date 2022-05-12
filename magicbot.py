@@ -1,6 +1,7 @@
 import time
-from telethon import TelegramClient, events, sync
-import animations
+from telethon import TelegramClient, events
+from animations import Smiles
+from alphabit import Alphabit
 
 
 ip_id = input("API_id kodini kiriting:")
@@ -11,7 +12,7 @@ api_hash = ip_hash
 
 client = TelegramClient('anon', api_id, api_hash)
 
-smiles = animations.Smiles()
+smiles = Smiles()
 
 
 @client.on(events.NewMessage)
@@ -42,3 +43,6 @@ async def my_event_handler(event):
 
             except Exception as e:
                 print(e)
+    elif ".anim" == event.raw_text[:5] and len(event.raw_text) > 6:
+        orig_text = event.raw_text.split(".type ", maxsplit=1)[1]
+        await event.edit(Alphabit.get_word)
