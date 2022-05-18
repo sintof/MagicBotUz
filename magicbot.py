@@ -44,7 +44,7 @@ async def my_event_handler(event):
             except Exception as e:
                 print(e)
     elif ".anim" == event.raw_text[:5] and len(event.raw_text) > 6:
-        orig_text = event.raw_text.split(".type ", maxsplit=1)[1]
+        orig_text = event.raw_text.split(".type", maxsplit=1)[1]
         await event.edit(Alphabit.get_word)
 
 
